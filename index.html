@@ -5,16 +5,19 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>TettoTec | Soluzioni impermeabili</title>
 
+<meta name="description" content="TettoTec: rifacimento e riparazione tetti, impermeabilizzazioni, grondaie e canne fumarie a Reggio Emilia. Preventivo gratuito e sopralluogo senza impegno.">
+
 <style>
 :root{
---bg1:#07142e;
---bg2:#0b2452;
---card:#0f2e66;
---text:#ffffff;
---muted:#d0d8ec;
---accent:#e30613;
---line:rgba(255,255,255,.14);
+--bg1:#f8fafc;
+--bg2:#e4eff7;
+--card:#ffffff;
+--text:#1a2a3a;
+--muted:#6b7c8d;
+--accent:#2a7df7;
+--line:rgba(0,0,0,.08);
 }
+
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -22,101 +25,129 @@ margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 color:var(--text);
 background:
-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #07142e 100%);
+linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #f8fafc 100%);
 }
+
+section{scroll-margin-top:84px;}
 .container{max-width:1100px;margin:0 auto;padding:0 18px}
+
 header{
-position:sticky; top:0; z-index:20;
-background:rgba(7,20,46,.9);
+position:sticky;
+top:0;
+z-index:20;
+background:#fff;
 border-bottom:1px solid var(--line);
 }
+
 .nav{
 display:flex;
 justify-content:space-between;
 padding:12px 0;
+align-items:center;
 }
+
 .navlinks a{
 text-decoration:none;
 margin-right:12px;
 padding:6px 10px;
 border-radius:8px;
+color:var(--text);
 }
+
 .brand-hero{padding:18px 0 8px}
 .logo-wrap{display:flex;justify-content:center}
 .logo{height:120px}
 
+.hero-title{text-align:center;margin:10px 0 0;}
+.hero-subtitle{text-align:center;color:var(--muted);margin:6px 0 0;}
+
 .card{
-background:rgba(15,46,102,.45);
+background:var(--card);
 border:1px solid var(--line);
 border-radius:16px;
 padding:18px;
 margin-bottom:18px;
 }
+
 .btn{
 padding:12px 14px;
 border-radius:12px;
 text-decoration:none;
 font-weight:bold;
 border:1px solid var(--line);
+display:inline-block;
 }
-.btn-primary{background:var(--accent);color:#fff}
 
-.section-head{
-display:flex;
-justify-content:space-between;
-align-items:flex-end;
-margin-bottom:14px;
+.btn-primary{
+background:var(--accent);
+color:#fff;
 }
-.group{
-margin-top:14px;
-border:1px solid var(--line);
-border-radius:16px;
-padding:16px;
-background:rgba(255,255,255,.03);
+
+.map{
+width:100%;
+max-width:420px;
+height:200px;
+border:0;
+border-radius:14px;
+display:block;
+margin:14px auto 0;
 }
-.group-title{
-margin-bottom:10px;
-}
-.services-grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:14px;
-}
-.service-card{
-background:rgba(15,46,102,.4);
+
+/* ACCORDION */
+.accordion-item{
 border:1px solid var(--line);
 border-radius:14px;
-padding:16px;
+margin-bottom:10px;
+overflow:hidden;
 }
-.service-list{
-padding-left:18px;
+
+.accordion-title{
+width:100%;
+background:none;
+border:none;
+color:var(--text);
+text-align:left;
+padding:16px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .3s ease;
+padding:0 16px;
+}
+
+.accordion-content p,
+.accordion-content ul{
+margin-top:10px;
 color:var(--muted);
 }
-.split{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:14px;
-}
-.map{width:100%;height:320px;border:0;border-radius:14px}
 
-@media (max-width:900px){
-.services-grid{grid-template-columns:1fr}
-.split{grid-template-columns:1fr}
+.accordion-item.active .accordion-content{
+max-height:500px;
+padding-bottom:16px;
 }
+
 </style>
 </head>
 
-<body>
+<body id="top">
 
 <header>
 <div class="container">
-<div class="nav">
+<nav class="nav">
 <b>TettoTec</b>
 <div class="navlinks">
 <a href="#servizi">Servizi</a>
 <a href="#contatti">Contatti</a>
 </div>
-</div>
+</nav>
 </div>
 </header>
 
@@ -125,6 +156,8 @@ gap:14px;
 <div class="logo-wrap">
 <img class="logo" src="logo.png" alt="Logo TettoTec">
 </div>
+<h1 class="hero-title">Soluzioni impermeabili</h1>
+<p class="hero-subtitle">Rifacimento, riparazioni, impermeabilizzazioni e lattoneria a Reggio Emilia.</p>
 </div>
 </div>
 
@@ -133,20 +166,13 @@ gap:14px;
 
 <section id="servizi">
 <div class="card">
-
-<div class="section-head">
 <h2>I nostri servizi</h2>
-<a class="btn btn-primary" href="#contatti">Richiedi sopralluogo</a>
-</div>
 
-<div class="group">
-<h3 class="group-title">Rifacimento e riparazione tetti</h3>
-<div class="services-grid">
-
-<div class="service-card">
-<b>Rifacimento tetto</b>
+<div class="accordion-item">
+<button class="accordion-title">Rifacimento tetto <span>+</span></button>
+<div class="accordion-content">
 <p>Il rifacimento del tetto serve quando le tegole sono vecchie, rotte o il tetto fa passare acqua.</p>
-<ul class="service-list">
+<ul>
 <li>Rimuovere tegole o coppi vecchi</li>
 <li>Posare la guaina impermeabile</li>
 <li>Installare l’isolamento (se richiesto)</li>
@@ -154,11 +180,13 @@ gap:14px;
 </ul>
 <p>Un tetto rifatto bene protegge la casa dalla pioggia ed evita infiltrazioni che possono rovinare soffitti e muri.</p>
 </div>
+</div>
 
-<div class="service-card">
-<b>Riparazione tetto</b>
+<div class="accordion-item">
+<button class="accordion-title">Riparazione tetto <span>+</span></button>
+<div class="accordion-content">
 <p>Se entra acqua dal tetto o alcune tegole sono rotte, interveniamo senza rifare tutta la copertura.</p>
-<ul class="service-list">
+<ul>
 <li>Sostituzione di tegole o coppi rotti</li>
 <li>Sistemazione di tegole spostate</li>
 <li>Sigillatura dei punti da cui entra l’acqua</li>
@@ -166,17 +194,13 @@ gap:14px;
 </ul>
 <p>Intervenire subito evita che il problema peggiori nel tempo.</p>
 </div>
-
-</div>
 </div>
 
-<div class="group">
-<h3 class="group-title">Impermeabilizzazione</h3>
-<div class="services-grid">
-<div class="service-card">
-<b>Impermeabilizzazione tetto</b>
+<div class="accordion-item">
+<button class="accordion-title">Impermeabilizzazione tetto <span>+</span></button>
+<div class="accordion-content">
 <p>L’impermeabilizzazione serve a non far passare l’acqua dal tetto.</p>
-<ul class="service-list">
+<ul>
 <li>Proteggono dalla pioggia</li>
 <li>Resistono al sole e al freddo</li>
 <li>Chiudono piccole crepe o fessure</li>
@@ -184,15 +208,12 @@ gap:14px;
 <p>Questo trattamento evita infiltrazioni e mantiene la casa asciutta.</p>
 </div>
 </div>
-</div>
 
-<div class="group">
-<h3 class="group-title">Lattoneria: grondaie e canne fumarie</h3>
-<div class="services-grid">
-<div class="service-card">
-<b>Grondaie e canne fumarie</b>
+<div class="accordion-item">
+<button class="accordion-title">Grondaie e canne fumarie <span>+</span></button>
+<div class="accordion-content">
 <p>Le grondaie servono a far scorrere via l’acqua piovana senza creare danni a muri e tetto.</p>
-<ul class="service-list">
+<ul>
 <li>Installazione e sostituzione di grondaie</li>
 <li>Riparazione perdite</li>
 <li>Montaggio canne fumarie</li>
@@ -201,11 +222,6 @@ gap:14px;
 <p>Un impianto ben installato evita infiltrazioni e problemi di umidità.</p>
 </div>
 </div>
-</div>
-
-<p style="margin-top:14px">
-Preventivo gratuito senza impegno. Contattaci per un sopralluogo.
-</p>
 
 </div>
 </section>
@@ -213,19 +229,10 @@ Preventivo gratuito senza impegno. Contattaci per un sopralluogo.
 <section id="contatti">
 <div class="card">
 <h2>Contatti</h2>
-<p>Per informazioni o per richiedere un sopralluogo gratuito contattaci tramite email.</p>
-<p><b>Email:</b><br>
-<a href="mailto:info@tettotec.com">info@tettotec.com</a>
-</p>
+<p>Email:<br>
+<a href="mailto:info@tettotec.com">info@tettotec.com</a></p>
 
-<div class="cta-row" style="margin-top:10px">
-<a class="btn btn-primary"
-href="mailto:info@tettotec.com?subject=Richiesta%20sopralluogo%20-%20TettoTec&body=Buongiorno,%0D%0A%0D%0AVorrei%20richiedere%20un%20sopralluogo.%0D%0AIndirizzo%20intervento:%20%0D%0ATipo%20problema:%20%0D%0A%0D%0AGrazie.">
-Scrivi una email
-</a>
-</div>
-
-<p style="margin-top:12px"><b>Indirizzo:</b><br>
+<p><b>Indirizzo:</b><br>
 Viale Risorgimento, 4 — Reggio Emilia (RE)
 </p>
 
@@ -239,6 +246,28 @@ src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emi
 
 </div>
 </main>
+
+<script>
+document.querySelectorAll(".accordion-title").forEach(btn => {
+btn.addEventListener("click", function(){
+let all = document.querySelectorAll(".accordion-item");
+all.forEach(el => {
+if(el !== this.parentElement){
+el.classList.remove("active");
+el.querySelector("span").textContent = "+";
+}
+});
+let item = this.parentElement;
+item.classList.toggle("active");
+let symbol = this.querySelector("span");
+if(item.classList.contains("active")){
+symbol.textContent = "-";
+}else{
+symbol.textContent = "+";
+}
+});
+});
+</script>
 
 </body>
 </html>
