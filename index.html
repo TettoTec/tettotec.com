@@ -5,7 +5,27 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>TettoTec | Soluzioni impermeabili</title>
 
-<meta name="description" content="TettoTec: rifacimento e riparazione tetti, impermeabilizzazioni, grondaie e canne fumarie a Reggio Emilia. Preventivo gratuito e sopralluogo senza impegno.">
+<meta name="description" content="TettoTec: rifacimento e riparazione tetti, impermeabilizzazioni, grondaie e canne fumarie. Preventivo gratuito e sopralluogo senza impegno.">
+
+<link rel="preconnect" href="https://www.google.com">
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "RoofingContractor",
+"name": "TettoTec",
+"email": "info@tettotec.com",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "Viale Risorgimento, 4",
+"addressLocality": "Reggio Emilia",
+"addressRegion": "RE",
+"addressCountry": "IT"
+},
+"areaServed": "IT"
+}
+</script>
 
 <style>
 :root{
@@ -24,8 +44,7 @@ body{
 margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 color:var(--text);
-background:
-linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #f8fafc 100%);
+background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #f8fafc 100%);
 }
 
 section{scroll-margin-top:84px;}
@@ -44,6 +63,7 @@ display:flex;
 justify-content:space-between;
 padding:12px 0;
 align-items:center;
+gap:12px;
 }
 
 .navlinks a{
@@ -56,10 +76,29 @@ color:var(--text);
 
 .brand-hero{padding:18px 0 8px}
 .logo-wrap{display:flex;justify-content:center}
-.logo{height:120px}
+
+/* LOGO PIÙ GRANDE (responsive) */
+.logo{height:150px; width:auto;}
+@media (min-width: 768px){
+.logo{height:190px;}
+}
 
 .hero-title{text-align:center;margin:10px 0 0;}
 .hero-subtitle{text-align:center;color:var(--muted);margin:6px 0 0;}
+
+.hero-cta{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:14px 0 0;
+flex-wrap:wrap;
+}
+
+.micro-trust{
+text-align:center;
+color:var(--muted);
+margin:10px 0 0;
+}
 
 .card{
 background:var(--card);
@@ -81,6 +120,7 @@ display:inline-block;
 .btn-primary{
 background:var(--accent);
 color:#fff;
+border-color:transparent;
 }
 
 .map{
@@ -117,10 +157,10 @@ align-items:center;
 }
 
 .accordion-content{
-max-height:0;
 overflow:hidden;
 transition:max-height .3s ease;
 padding:0 16px;
+max-height:0;
 }
 
 .accordion-content p,
@@ -130,10 +170,22 @@ color:var(--muted);
 }
 
 .accordion-item.active .accordion-content{
-max-height:500px;
+max-height:800px;
 padding-bottom:16px;
 }
 
+/* Hover/focus */
+.navlinks a:hover, .navlinks a:focus,
+.btn:hover, .btn:focus,
+.accordion-title:focus{
+outline: 2px solid rgba(42,125,247,.35);
+outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+html{scroll-behavior:auto}
+.accordion-content{transition:none}
+}
 </style>
 </head>
 
@@ -141,7 +193,7 @@ padding-bottom:16px;
 
 <header>
 <div class="container">
-<nav class="nav">
+<nav class="nav" aria-label="Navigazione principale">
 <b>TettoTec</b>
 <div class="navlinks">
 <a href="#servizi">Servizi</a>
@@ -154,10 +206,21 @@ padding-bottom:16px;
 <div class="brand-hero">
 <div class="container">
 <div class="logo-wrap">
-<img class="logo" src="logo.png" alt="Logo TettoTec">
+<img class="logo" src="logo.png" alt="Logo TettoTec" loading="eager" decoding="async">
 </div>
-<h1 class="hero-title">Soluzioni impermeabili</h1>
-<p class="hero-subtitle">Rifacimento, riparazioni, impermeabilizzazioni e lattoneria a Reggio Emilia.</p>
+
+<h1 class="hero-title">Tetti sicuri, asciutti, fatti bene</h1>
+<p class="hero-subtitle">
+Rifacimento e riparazione tetti, impermeabilizzazioni e lattoneria.
+<b>Sopralluogo gratuito</b> e preventivo chiaro, senza impegno.
+</p>
+
+<div class="hero-cta">
+<a class="btn btn-primary" href="#contatti">Chiedi il tuo preventivo ora</a>
+<a class="btn" href="#servizi">Scopri i servizi</a>
+</div>
+
+<p class="micro-trust">Preventivo dettagliato e indicazioni chiare su tempi e lavorazioni.</p>
 </div>
 </div>
 
@@ -167,59 +230,119 @@ padding-bottom:16px;
 <section id="servizi">
 <div class="card">
 <h2>I nostri servizi</h2>
+<p style="color:var(--muted); margin-top:6px;">
+Interveniamo su case, condomìni e capannoni: dalla riparazione urgente alle soluzioni complete.
+Usiamo materiali certificati e curiamo i dettagli che fanno la differenza contro infiltrazioni e umidità.
+</p>
 
 <div class="accordion-item">
-<button class="accordion-title">Rifacimento tetto <span>+</span></button>
-<div class="accordion-content">
-<p>Il rifacimento del tetto serve quando le tegole sono vecchie, rotte o il tetto fa passare acqua.</p>
+<button class="accordion-title"
+aria-expanded="false"
+aria-controls="acc-rifacimento"
+id="btn-rifacimento">
+Rifacimento tetto <span aria-hidden="true">+</span>
+</button>
+<div class="accordion-content"
+id="acc-rifacimento"
+role="region"
+aria-labelledby="btn-rifacimento"
+hidden>
+<p>
+Quando la copertura è usurata o ci sono infiltrazioni ricorrenti, il rifacimento è la soluzione definitiva.
+Valutiamo lo stato del pacchetto di copertura e proponiamo l’intervento più adatto (senza lavori inutili).
+</p>
 <ul>
-<li>Rimuovere tegole o coppi vecchi</li>
-<li>Posare la guaina impermeabile</li>
-<li>Installare l’isolamento (se richiesto)</li>
-<li>Mettere tegole o coppi nuovi</li>
+<li>Rimozione e smaltimento della vecchia copertura</li>
+<li>Posa di guaine/membrane impermeabili e strati traspiranti</li>
+<li>Isolamento termico (su richiesta) e verifica ventilazione</li>
+<li>Nuova posa tegole o coppi e finiture</li>
 </ul>
-<p>Un tetto rifatto bene protegge la casa dalla pioggia ed evita infiltrazioni che possono rovinare soffitti e muri.</p>
-</div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-title">Riparazione tetto <span>+</span></button>
-<div class="accordion-content">
-<p>Se entra acqua dal tetto o alcune tegole sono rotte, interveniamo senza rifare tutta la copertura.</p>
-<ul>
-<li>Sostituzione di tegole o coppi rotti</li>
-<li>Sistemazione di tegole spostate</li>
-<li>Sigillatura dei punti da cui entra l’acqua</li>
-<li>Riparazione di piccole infiltrazioni</li>
-</ul>
-<p>Intervenire subito evita che il problema peggiori nel tempo.</p>
-</div>
-</div>
-
-<div class="accordion-item">
-<button class="accordion-title">Impermeabilizzazione tetto <span>+</span></button>
-<div class="accordion-content">
-<p>L’impermeabilizzazione serve a non far passare l’acqua dal tetto.</p>
-<ul>
-<li>Proteggono dalla pioggia</li>
-<li>Resistono al sole e al freddo</li>
-<li>Chiudono piccole crepe o fessure</li>
-</ul>
-<p>Questo trattamento evita infiltrazioni e mantiene la casa asciutta.</p>
+<p>
+Risultato: tetto più resistente alle piogge, meno dispersione di calore e maggiore valore dell’immobile.
+</p>
 </div>
 </div>
 
 <div class="accordion-item">
-<button class="accordion-title">Grondaie e canne fumarie <span>+</span></button>
-<div class="accordion-content">
-<p>Le grondaie servono a far scorrere via l’acqua piovana senza creare danni a muri e tetto.</p>
+<button class="accordion-title"
+aria-expanded="false"
+aria-controls="acc-riparazione"
+id="btn-riparazione">
+Riparazione tetto <span aria-hidden="true">+</span>
+</button>
+<div class="accordion-content"
+id="acc-riparazione"
+role="region"
+aria-labelledby="btn-riparazione"
+hidden>
+<p>
+Se il problema è localizzato (tegole rotte, colmi spostati, infiltrazione in un punto), interveniamo in modo mirato
+per ripristinare la tenuta senza rifare tutto.
+</p>
 <ul>
-<li>Installazione e sostituzione di grondaie</li>
-<li>Riparazione perdite</li>
-<li>Montaggio canne fumarie</li>
-<li>Sigillatura dei punti sul tetto dove passa la canna fumaria</li>
+<li>Sostituzione di tegole/coppi danneggiati</li>
+<li>Ripristino colmi, scossaline e punti critici</li>
+<li>Sigillature professionali e verifica tenuta</li>
+<li>Interventi rapidi per limitare i danni da acqua</li>
 </ul>
-<p>Un impianto ben installato evita infiltrazioni e problemi di umidità.</p>
+<p>
+Una riparazione eseguita subito evita che l’infiltrazione rovini isolamento, travi e intonaci.
+</p>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-title"
+aria-expanded="false"
+aria-controls="acc-impermeabilizzazione"
+id="btn-impermeabilizzazione">
+Impermeabilizzazione tetto <span aria-hidden="true">+</span>
+</button>
+<div class="accordion-content"
+id="acc-impermeabilizzazione"
+role="region"
+aria-labelledby="btn-impermeabilizzazione"
+hidden>
+<p>
+Proteggiamo la copertura con sistemi impermeabilizzanti adatti al tipo di tetto (piano o inclinato),
+riducendo il rischio di infiltrazioni e degrado nel tempo.
+</p>
+<ul>
+<li>Applicazione guaine o membrane impermeabili</li>
+<li>Trattamenti protettivi resistenti a sole, gelo e sbalzi termici</li>
+<li>Chiusura micro-fessure e punti di passaggio</li>
+</ul>
+<p>
+Soluzione ideale anche in presenza di vecchie guaine usurate o aree che ristagnano acqua.
+</p>
+</div>
+</div>
+
+<div class="accordion-item">
+<button class="accordion-title"
+aria-expanded="false"
+aria-controls="acc-grondaie"
+id="btn-grondaie">
+Grondaie e canne fumarie <span aria-hidden="true">+</span>
+</button>
+<div class="accordion-content"
+id="acc-grondaie"
+role="region"
+aria-labelledby="btn-grondaie"
+hidden>
+<p>
+La lattoneria ben fatta è fondamentale: grondaie, pluviali e attraversamenti sul tetto sono tra le cause più comuni di perdite.
+Installiamo e ripristiniamo gli elementi di scarico e sigilliamo i passaggi in modo sicuro.
+</p>
+<ul>
+<li>Installazione/sostituzione grondaie e pluviali</li>
+<li>Riparazione perdite e giunzioni</li>
+<li>Scossaline e raccordi su comignoli e lucernari</li>
+<li>Sigillatura professionale dei punti di passaggio</li>
+</ul>
+<p>
+Così l’acqua viene convogliata correttamente e si evitano infiltrazioni su facciate e sottotetto.
+</p>
 </div>
 </div>
 
@@ -229,8 +352,27 @@ padding-bottom:16px;
 <section id="contatti">
 <div class="card">
 <h2>Contatti</h2>
-<p>Email:<br>
-<a href="mailto:info@tettotec.com">info@tettotec.com</a></p>
+
+<p style="color:var(--muted); margin-top:6px;">
+Vuoi risolvere un’infiltrazione o rifare il tetto in modo definitivo?
+Scrivici: rispondiamo rapidamente e ti proponiamo la soluzione più adatta dopo una valutazione sul posto.
+</p>
+
+<div class="hero-cta" style="justify-content:flex-start;">
+<a class="btn btn-primary"
+href="mailto:info@tettotec.com?subject=Richiesta%20preventivo%20TettoTec&body=Ciao%2C%20vorrei%20un%20preventivo%20per%3A%0A-%20Tipo%20intervento%3A%20%0A-%20Indirizzo%3A%20%0A-%20Telefono%3A%20%0A-%20Note%3A%20">
+Chiedi il tuo preventivo ora
+</a>
+<a class="btn"
+href="mailto:info@tettotec.com?subject=Richiesta%20sopralluogo%20TettoTec">
+Prenota sopralluogo gratuito
+</a>
+</div>
+
+<p style="margin-top:14px;">
+Email:<br>
+<a href="mailto:info@tettotec.com">info@tettotec.com</a>
+</p>
 
 <p><b>Indirizzo:</b><br>
 Viale Risorgimento, 4 — Reggio Emilia (RE)
@@ -238,6 +380,7 @@ Viale Risorgimento, 4 — Reggio Emilia (RE)
 
 <iframe class="map"
 loading="lazy"
+title="Mappa - Viale Risorgimento 4, Reggio Emilia"
 src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emilia&output=embed">
 </iframe>
 
@@ -248,23 +391,29 @@ src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emi
 </main>
 
 <script>
-document.querySelectorAll(".accordion-title").forEach(btn => {
-btn.addEventListener("click", function(){
-let all = document.querySelectorAll(".accordion-item");
-all.forEach(el => {
-if(el !== this.parentElement){
+// Accordion accessibile: aria-expanded + pannello hidden. Mantiene 1 aperto alla volta.
+document.querySelectorAll(".accordion-title").forEach((btn) => {
+btn.addEventListener("click", function () {
+const items = document.querySelectorAll(".accordion-item");
+
+items.forEach((el) => {
+const b = el.querySelector(".accordion-title");
+const panel = el.querySelector(".accordion-content");
+if (b !== btn) {
 el.classList.remove("active");
-el.querySelector("span").textContent = "+";
+b.setAttribute("aria-expanded", "false");
+b.querySelector("span").textContent = "+";
+panel.hidden = true;
 }
 });
-let item = this.parentElement;
-item.classList.toggle("active");
-let symbol = this.querySelector("span");
-if(item.classList.contains("active")){
-symbol.textContent = "-";
-}else{
-symbol.textContent = "+";
-}
+
+const item = btn.parentElement;
+const panel = item.querySelector(".accordion-content");
+const isOpen = item.classList.toggle("active");
+
+btn.setAttribute("aria-expanded", String(isOpen));
+btn.querySelector("span").textContent = isOpen ? "-" : "+";
+panel.hidden = !isOpen;
 });
 });
 </script>
