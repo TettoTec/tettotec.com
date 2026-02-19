@@ -1,45 +1,220 @@
- <!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tettotec</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Tettotec | Tetti e impermeabilizzazioni - Reggio Emilia</title>
+<meta name="description" content="Tettotec a Reggio Emilia: rifacimento tetti, impermeabilizzazioni, lattoneria, grondaie, isolamento e manutenzione. Contattaci su WhatsApp o telefono." />
 <style>
-body {font-family: Arial; margin:0; text-align:center;}
-header {background:#222; color:white; padding:40px;}
-section {padding:40px;}
-.button {
-background:#25D366;
-color:white;
-padding:15px 25px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
+:root{
+--bg:#0b1220; --card:#111a2e; --text:#e9eefc; --muted:#b8c4e6;
+--accent:#25D366; --line:rgba(255,255,255,.12);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#070b14 0%, #0b1220 35%, #070b14 100%);color:var(--text);}
+a{color:inherit}
+.container{max-width:1100px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;background:rgba(7,11,20,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.3px}
+.dot{width:10px;height:10px;border-radius:999px;background:var(--accent);display:inline-block}
+.navlinks{display:flex;gap:14px;flex-wrap:wrap}
+.navlinks a{opacity:.9;text-decoration:none}
+.navlinks a:hover{opacity:1;text-decoration:underline}
+.hero{padding:56px 0 28px}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:stretch}
+.card{background:rgba(17,26,46,.82);border:1px solid var(--line);border-radius:16px;padding:18px}
+h1{margin:0 0 10px;font-size:clamp(28px,4vw,44px);line-height:1.05}
+.lead{margin:0 0 16px;color:var(--muted);font-size:clamp(15px,1.8vw,18px);line-height:1.5}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.chip{border:1px solid var(--line);padding:7px 10px;border-radius:999px;font-size:13px;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:12px;border:1px solid var(--line);text-decoration:none;font-weight:700}
+.btn-primary{background:var(--accent);color:#082012;border-color:transparent}
+.btn:hover{transform:translateY(-1px)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi{display:flex;flex-direction:column;gap:6px}
+.kpi b{font-size:18px}
+section{padding:26px 0}
+h2{margin:0 0 12px;font-size:22px}
+p{margin:0 0 10px;color:var(--muted);line-height:1.6}
+ul{margin:0;padding-left:18px;color:var(--muted);line-height:1.7}
+.service{display:flex;flex-direction:column;gap:8px}
+.service b{font-size:16px;color:var(--text)}
+.note{font-size:13px;color:var(--muted);opacity:.9}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch}
+.map{width:100%;height:320px;border:0;border-radius:14px}
+footer{border-top:1px solid var(--line);padding:18px 0 28px;color:var(--muted);font-size:13px}
+.wa-float{
+position:fixed;right:16px;bottom:16px;z-index:20;
+background:var(--accent);color:#082012;border-radius:999px;
+padding:12px 14px;text-decoration:none;font-weight:800;
+box-shadow:0 10px 30px rgba(0,0,0,.35)
+}
+.wa-float small{font-weight:700;opacity:.9}
+@media (max-width:900px){
+.hero-grid{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr}
+.split{grid-template-columns:1fr}
+.nav{flex-direction:column;align-items:flex-start}
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
-<h1>Tettotec</h1>
-<p>Rifacimento e manutenzione tetti</p>
-<a class="button" href="https://wa.me/39TUONUMERO">WhatsApp</a>
+<div class="container">
+<div class="nav">
+<div class="brand"><span class="dot"></span> TETTOTEC</div>
+<nav class="navlinks">
+<a href="#servizi">Servizi</a>
+<a href="#chi-siamo">Chi siamo</a>
+<a href="#contatti">Contatti</a>
+</nav>
+</div>
+</div>
 </header>
 
-<section>
-<h2>I nostri servizi</h2>
-<p>Rifacimento tetti</p>
-<p>Impermeabilizzazione</p>
-<p>Lattoneria</p>
-<p>Isolamento termico</p>
+<main>
+<div class="container">
+<section class="hero" id="home">
+<div class="hero-grid">
+<div class="card">
+<h1>Tetti, impermeabilizzazioni e lattoneria a Reggio Emilia</h1>
+<p class="lead">
+Interventi rapidi e soluzioni su misura per tetti civili e industriali:
+rifacimenti, manutenzioni, isolamento e ripristini.
+</p>
+<div class="cta-row">
+<a class="btn btn-primary" href="https://wa.me/393273266350" target="_blank" rel="noopener">
+WhatsApp: 327 326 6350
+</a>
+<a class="btn" href="tel:+393273266350">Chiama ora</a>
+<a class="btn" href="mailto:info@tettotec.com">Email</a>
+</div>
+<div class="chips" aria-label="Aree e servizi principali">
+<span class="chip">Reggio Emilia</span>
+<span class="chip">Rifacimento tetti</span>
+<span class="chip">Impermeabilizzazione</span>
+<span class="chip">Lattoneria & grondaie</span>
+<span class="chip">Isolamento termico</span>
+<span class="chip">Manutenzione</span>
+</div>
+<p class="note">Sede: Viale Risorgimento, 4 — Reggio Emilia (RE)</p>
+</div>
+
+<div class="card">
+<h2>Contatto veloce</h2>
+<div class="grid" style="grid-template-columns:1fr;gap:10px">
+<div class="card" style="background:rgba(255,255,255,.03)">
+<div class="kpi">
+<b>Telefono / WhatsApp</b>
+<span class="note"><a href="tel:+393273266350">+39 327 326 6350</a></span>
+</div>
+</div>
+<div class="card" style="background:rgba(255,255,255,.03)">
+<div class="kpi">
+<b>Email</b>
+<span class="note"><a href="mailto:info@tettotec.com">info@tettotec.com</a></span>
+</div>
+</div>
+<div class="card" style="background:rgba(255,255,255,.03)">
+<div class="kpi">
+<b>Indirizzo</b>
+<span class="note">Viale Risorgimento, 4 — RE</span>
+</div>
+</div>
+</div>
+<p class="note" style="margin-top:10px">
+Rispondiamo rapidamente su WhatsApp per sopralluoghi e preventivi.
+</p>
+</div>
+</div>
 </section>
 
-<section>
+<section id="servizi">
+<div class="card">
+<h2>Servizi</h2>
+<div class="grid">
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Rifacimento tetti</b>
+<p>Rifacimenti parziali o completi, ripristini e sostituzioni elementi danneggiati.</p>
+</div>
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Impermeabilizzazione</b>
+<p>Guaina e sistemi impermeabilizzanti per coperture piane e inclinate, eliminazione infiltrazioni.</p>
+</div>
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Lattoneria</b>
+<p>Scossaline, converse, canali di gronda e pluviali: posa e riparazioni.</p>
+</div>
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Grondaie</b>
+<p>Pulizia, sostituzione e ripristino grondaie e pluviali per corretto deflusso delle acque.</p>
+</div>
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Isolamento termico</b>
+<p>Interventi per migliorare comfort e prestazioni energetiche (in base alla copertura).</p>
+</div>
+<div class="card service" style="background:rgba(255,255,255,.03)">
+<b>Manutenzione tetti</b>
+<p>Controlli e piccole riparazioni per prevenire danni e costi maggiori nel tempo.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="chi-siamo">
+<div class="split">
+<div class="card">
+<h2>Chi siamo</h2>
+<p>
+Tettotec opera a Reggio Emilia e dintorni con interventi su coperture, impermeabilizzazioni e lattoneria.
+Lavoriamo con attenzione a sicurezza, pulizia del cantiere e tempi concordati.
+</p>
+<p class="note">
+Vuoi aggiungere foto lavori? Caricale su GitHub (cartella <b>img</b>) e le inseriamo in “Galleria”.
+</p>
+</div>
+<div class="card" id="contatti">
 <h2>Contatti</h2>
-<p>Email: info@tettotec.com</p>
-<p>Telefono: TUONUMERO</p>
+<p><b>Telefono / WhatsApp:</b> <a href="tel:+393273266350">327 326 6350</a></p>
+<p><b>Email:</b> <a href="mailto:info@tettotec.com">info@tettotec.com</a></p>
+<p><b>Indirizzo:</b> Viale Risorgimento, 4 — Reggio Emilia (RE)</p>
+<p class="note">P.IVA: 03034900351</p>
+
+<div style="margin-top:12px">
+<iframe
+class="map"
+loading="lazy"
+referrerpolicy="no-referrer-when-downgrade"
+src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emilia&output=embed">
+</iframe>
+</div>
+
+<div class="cta-row" style="margin-top:12px">
+<a class="btn btn-primary" href="https://wa.me/393273266350" target="_blank" rel="noopener">Scrivi su WhatsApp</a>
+<a class="btn" href="mailto:info@tettotec.com">Invia email</a>
+</div>
+</div>
+</div>
 </section>
 
+<footer>
+<div class="container" style="padding:0">
+<div>© <span id="y"></span> Tettotec — P.IVA 03034900351 — Reggio Emilia</div>
+<div class="note">Questo sito usa solo contenuti essenziali; se vuoi aggiungere Privacy/Cookie, te lo preparo.</div>
+</div>
+</footer>
+</div>
+</main>
+
+<a class="wa-float" href="https://wa.me/393273266350" target="_blank" rel="noopener">
+WhatsApp<br><small>327 326 6350</small>
+</a>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
-Commit changes
