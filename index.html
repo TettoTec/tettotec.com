@@ -3,9 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
 <title>TettoTec | Soluzioni impermeabili</title>
-<meta name="description" content="TettoTec: rifacimento tetti, impermeabilizzazioni, grondaie e manutenzione a Reggio Emilia e provincia." />
 
 <style>
 :root{
@@ -16,7 +14,6 @@
 --muted:#d0d8ec;
 --accent:#e30613;
 --line:rgba(255,255,255,.14);
---soft:rgba(255,255,255,.06);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -25,107 +22,86 @@ margin:0;
 font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
 color:var(--text);
 background:
-radial-gradient(900px 600px at 15% 10%, rgba(227,6,19,.18), transparent 55%),
-radial-gradient(900px 600px at 85% 15%, rgba(255,255,255,.10), transparent 55%),
 linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #07142e 100%);
 }
-a{color:inherit}
 .container{max-width:1100px;margin:0 auto;padding:0 18px}
-
 header{
 position:sticky; top:0; z-index:20;
-background:rgba(7,20,46,.72);
-backdrop-filter:blur(10px);
+background:rgba(7,20,46,.9);
 border-bottom:1px solid var(--line);
 }
 .nav{
 display:flex;
-align-items:center;
 justify-content:space-between;
-gap:14px;
 padding:12px 0;
 }
-.nav-title{display:flex; flex-direction:column; gap:2px; line-height:1.1}
-.nav-title span{font-size:12.5px;color:var(--muted)}
-.navlinks{display:flex;gap:14px;flex-wrap:wrap}
 .navlinks a{
 text-decoration:none;
-padding:8px 10px;
-border-radius:10px;
+margin-right:12px;
+padding:6px 10px;
+border-radius:8px;
 }
-.navlinks a:hover{
-border:1px solid var(--line);
-background:rgba(255,255,255,.04);
-}
-
 .brand-hero{padding:18px 0 8px}
-.logo-wrap{display:flex;align-items:center;justify-content:center}
-.logo{
-height:140px;
-width:auto;
-max-width:min(520px, 92vw);
-filter: drop-shadow(0 12px 25px rgba(0,0,0,.35));
-}
-
-.hero{padding:14px 0 18px}
-.hero-grid{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:16px;
-}
+.logo-wrap{display:flex;justify-content:center}
+.logo{height:120px}
 
 .card{
-background:rgba(15,46,102,.55);
+background:rgba(15,46,102,.45);
 border:1px solid var(--line);
 border-radius:16px;
 padding:18px;
-box-shadow:0 18px 40px rgba(0,0,0,.18);
+margin-bottom:18px;
 }
-.card.soft{background:rgba(255,255,255,.04); box-shadow:none}
-
-h1{margin:0 0 10px;font-size:clamp(28px, 4vw, 42px)}
-.lead{margin:0 0 14px;color:var(--muted);}
-
-.cta-row{display:flex;gap:10px;margin-top:14px}
 .btn{
-display:inline-flex;
 padding:12px 14px;
 border-radius:12px;
-border:1px solid var(--line);
 text-decoration:none;
-font-weight:800;
-background:rgba(255,255,255,.02);
+font-weight:bold;
+border:1px solid var(--line);
 }
-.btn-primary{
-background:var(--accent);
-border-color:transparent;
-color:#fff;
+.btn-primary{background:var(--accent);color:#fff}
+
+.section-head{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:14px;
 }
-
-section{padding:18px 0}
-h2{margin:0 0 12px;font-size:22px}
-h3{margin:12px 0 6px}
-p{margin:0 0 10px;color:var(--muted);line-height:1.7}
-
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.service b{color:var(--text)}
-.note{font-size:13px;color:var(--muted)}
-
-.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.group{
+margin-top:14px;
+border:1px solid var(--line);
+border-radius:16px;
+padding:16px;
+background:rgba(255,255,255,.03);
+}
+.group-title{
+margin-bottom:10px;
+}
+.services-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+.service-card{
+background:rgba(15,46,102,.4);
+border:1px solid var(--line);
+border-radius:14px;
+padding:16px;
+}
+.service-list{
+padding-left:18px;
+color:var(--muted);
+}
+.split{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
 .map{width:100%;height:320px;border:0;border-radius:14px}
 
-footer{
-border-top:1px solid var(--line);
-padding:18px 0 28px;
-color:var(--muted);
-font-size:13px;
-}
-
 @media (max-width:900px){
-.hero-grid{grid-template-columns:1fr}
-.grid{grid-template-columns:1fr}
+.services-grid{grid-template-columns:1fr}
 .split{grid-template-columns:1fr}
-.logo{height:120px}
 }
 </style>
 </head>
@@ -135,15 +111,11 @@ font-size:13px;
 <header>
 <div class="container">
 <div class="nav">
-<div class="nav-title">
 <b>TettoTec</b>
-<span>Soluzioni impermeabili — Reggio Emilia</span>
-</div>
-<nav class="navlinks">
+<div class="navlinks">
 <a href="#servizi">Servizi</a>
-<a href="#chi-siamo">Chi siamo</a>
 <a href="#contatti">Contatti</a>
-</nav>
+</div>
 </div>
 </div>
 </header>
@@ -159,133 +131,114 @@ font-size:13px;
 <main>
 <div class="container">
 
-<section class="hero" id="home">
-<div class="hero-grid">
-<div class="card">
-<h1>Tetti e impermeabilizzazioni a Reggio Emilia</h1>
-<p class="lead">
-Interventi su coperture civili con rifacimenti, riparazioni, impermeabilizzazioni e lattoneria.
-</p>
-<div class="cta-row">
-<a class="btn btn-primary" href="#contatti">Richiedi informazioni</a>
-</div>
-</div>
-
-<div class="card soft">
-<h2>Sopralluogo gratuito</h2>
-<p>Preventivi senza impegno su Reggio Emilia e provincia.</p>
-</div>
-</div>
-</section>
-
 <section id="servizi">
 <div class="card">
+
+<div class="section-head">
 <h2>I nostri servizi</h2>
+<a class="btn btn-primary" href="#contatti">Richiedi sopralluogo</a>
+</div>
 
-<h3>Rifacimento e riparazione tetti</h3>
-<div class="grid">
+<div class="group">
+<h3 class="group-title">Rifacimento e riparazione tetti</h3>
+<div class="services-grid">
 
-<div class="card soft service">
+<div class="service-card">
 <b>Rifacimento tetto</b>
-<p class="note">
-• Rimozione tegole o coppi<br>
-• Posa guaina impermeabile<br>
-• Installazione isolamento (su richiesta)<br>
-• Installazione tegole o coppi nuovi
-</p>
+<p>Il rifacimento del tetto serve quando le tegole sono vecchie, rotte o il tetto fa passare acqua.</p>
+<ul class="service-list">
+<li>Rimuovere tegole o coppi vecchi</li>
+<li>Posare la guaina impermeabile</li>
+<li>Installare l’isolamento (se richiesto)</li>
+<li>Mettere tegole o coppi nuovi</li>
+</ul>
+<p>Un tetto rifatto bene protegge la casa dalla pioggia ed evita infiltrazioni che possono rovinare soffitti e muri.</p>
 </div>
 
-<div class="card soft service">
+<div class="service-card">
 <b>Riparazione tetto</b>
-<p class="note">
-• Sostituzione tegole o coppi rotti<br>
-• Sistemazione tegole spostate<br>
-• Sigillatura infiltrazioni<br>
-• Riparazione piccole perdite
-</p>
+<p>Se entra acqua dal tetto o alcune tegole sono rotte, interveniamo senza rifare tutta la copertura.</p>
+<ul class="service-list">
+<li>Sostituzione di tegole o coppi rotti</li>
+<li>Sistemazione di tegole spostate</li>
+<li>Sigillatura dei punti da cui entra l’acqua</li>
+<li>Riparazione di piccole infiltrazioni</li>
+</ul>
+<p>Intervenire subito evita che il problema peggiori nel tempo.</p>
 </div>
 
 </div>
+</div>
 
-<h3>Impermeabilizzazione</h3>
-<div class="grid">
-
-<div class="card soft service">
+<div class="group">
+<h3 class="group-title">Impermeabilizzazione</h3>
+<div class="services-grid">
+<div class="service-card">
 <b>Impermeabilizzazione tetto</b>
-<p class="note">
-• Protezione dalla pioggia<br>
-• Resistenza agli agenti atmosferici<br>
-• Sigillatura crepe e fessure
-</p>
+<p>L’impermeabilizzazione serve a non far passare l’acqua dal tetto.</p>
+<ul class="service-list">
+<li>Proteggono dalla pioggia</li>
+<li>Resistono al sole e al freddo</li>
+<li>Chiudono piccole crepe o fessure</li>
+</ul>
+<p>Questo trattamento evita infiltrazioni e mantiene la casa asciutta.</p>
+</div>
+</div>
 </div>
 
-</div>
-
-<h3>Lattoneria: grondaie e canne fumarie</h3>
-<div class="grid">
-
-<div class="card soft service">
+<div class="group">
+<h3 class="group-title">Lattoneria: grondaie e canne fumarie</h3>
+<div class="services-grid">
+<div class="service-card">
 <b>Grondaie e canne fumarie</b>
-<p class="note">
-• Installazione grondaie<br>
-• Riparazione perdite<br>
-• Montaggio canne fumarie<br>
-• Sigillatura passaggi sul tetto
-</p>
+<p>Le grondaie servono a far scorrere via l’acqua piovana senza creare danni a muri e tetto.</p>
+<ul class="service-list">
+<li>Installazione e sostituzione di grondaie</li>
+<li>Riparazione perdite</li>
+<li>Montaggio canne fumarie</li>
+<li>Sigillatura dei punti sul tetto dove passa la canna fumaria</li>
+</ul>
+<p>Un impianto ben installato evita infiltrazioni e problemi di umidità.</p>
+</div>
+</div>
 </div>
 
-</div>
-
-<p class="note" style="margin-top:14px">
+<p style="margin-top:14px">
 Preventivo gratuito senza impegno. Contattaci per un sopralluogo.
 </p>
 
 </div>
 </section>
 
-<section id="chi-siamo">
-<div class="split">
-
+<section id="contatti">
 <div class="card">
-<h2>Chi siamo</h2>
-<p>
-Interveniamo rapidamente su tetti civili per risolvere infiltrazioni, degrado della copertura
-e problemi di deflusso delle acque.
-</p>
-<div class="cta-row">
-<a class="btn btn-primary" href="#contatti">Richiedi sopralluogo</a>
-</div>
-</div>
-
-<div class="card" id="contatti">
 <h2>Contatti</h2>
-<p><b>Telefono:</b> <a href="tel:+393273266350">+39 327 326 6350</a></p>
-<p><b>Email:</b> <a href="mailto:info@tettotec.com">info@tettotec.com</a></p>
-<p><b>Indirizzo:</b> Viale Risorgimento, 4 — Reggio Emilia (RE)</p>
-<p class="note">P.IVA: 03034900351</p>
+<p>Per informazioni o per richiedere un sopralluogo gratuito contattaci tramite email.</p>
+<p><b>Email:</b><br>
+<a href="mailto:info@tettotec.com">info@tettotec.com</a>
+</p>
 
-<iframe
-class="map"
+<div class="cta-row" style="margin-top:10px">
+<a class="btn btn-primary"
+href="mailto:info@tettotec.com?subject=Richiesta%20sopralluogo%20-%20TettoTec&body=Buongiorno,%0D%0A%0D%0AVorrei%20richiedere%20un%20sopralluogo.%0D%0AIndirizzo%20intervento:%20%0D%0ATipo%20problema:%20%0D%0A%0D%0AGrazie.">
+Scrivi una email
+</a>
+</div>
+
+<p style="margin-top:12px"><b>Indirizzo:</b><br>
+Viale Risorgimento, 4 — Reggio Emilia (RE)
+</p>
+
+<iframe class="map"
 loading="lazy"
 src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emilia&output=embed">
 </iframe>
 
 </div>
-
-</div>
 </section>
-
-<footer>
-<div class="container" style="padding:0">
-<div>© <span id="y"></span> TettoTec</div>
-</div>
-</footer>
 
 </div>
 </main>
 
-<script>
-document.getElementById('y').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
