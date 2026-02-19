@@ -3,21 +3,24 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>TettoTec | Soluzioni impermeabili  </title>
-<meta name="description" content="TettoTec : rifacimento tetti, guaina impermeabilizzante, lattoneria, grondaie, isolamento termico e manutenzione. Contattaci per telefono o email." />
+
+<title>TettoTec | Soluzioni impermeabili</title>
+<meta name="description" content="TettoTec: rifacimento tetti, impermeabilizzazioni civili e industriali, lattoneria, grondaie e manutenzione a Reggio Emilia e provincia." />
+
+<meta name="robots" content="index,follow" />
+<meta name="theme-color" content="#07142e" />
 
 <style>
 :root{
---bg1:#07142e; /* blu scuro */
---bg2:#0b2452; /* blu */
---card:#0f2e66; /* blu card */
+--bg1:#07142e;
+--bg2:#0b2452;
+--card:#0f2e66;
 --text:#ffffff;
 --muted:#d0d8ec;
---accent:#e30613; /* rosso */
+--accent:#e30613;
 --line:rgba(255,255,255,.14);
 --soft:rgba(255,255,255,.06);
 }
-
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
@@ -29,11 +32,22 @@ radial-gradient(900px 600px at 15% 10%, rgba(227,6,19,.18), transparent 55%),
 radial-gradient(900px 600px at 85% 15%, rgba(255,255,255,.10), transparent 55%),
 linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, #07142e 100%);
 }
-
 a{color:inherit}
+
 .container{max-width:1100px;margin:0 auto;padding:0 18px}
 
-/* Top strip (nav) - pulita */
+/* Skip link */
+.skip{
+position:absolute;left:-999px;top:10px;
+background:#fff;color:#000;padding:10px 12px;border-radius:10px;
+}
+.skip:focus{left:10px;z-index:9999}
+.navlinks a:focus-visible,.btn:focus-visible{
+outline:3px solid rgba(227,6,19,.9);
+outline-offset:3px;
+}
+
+/* Header */
 header{
 position:sticky; top:0; z-index:20;
 background:rgba(7,20,46,.72);
@@ -47,10 +61,7 @@ justify-content:space-between;
 gap:14px;
 padding:12px 0;
 }
-.nav-title{
-display:flex; flex-direction:column; gap:2px;
-line-height:1.1;
-}
+.nav-title{display:flex; flex-direction:column; gap:2px; line-height:1.1}
 .nav-title b{letter-spacing:.4px}
 .nav-title span{font-size:12.5px;color:var(--muted);opacity:.95}
 
@@ -66,29 +77,26 @@ border:1px solid transparent;
 opacity:1;
 border-color:var(--line);
 background:rgba(255,255,255,.04);
+text-decoration: underline;
+text-underline-offset: 4px;
 }
 
-/* Logo grande FUORI dalla barra */
-.brand-hero{
-padding:18px 0 8px;
-}
-.logo-wrap{
-display:flex;
-align-items:center;
-justify-content:center;
-}
+/* Logo */
+.brand-hero{padding:18px 0 8px}
+.logo-wrap{display:flex;align-items:center;justify-content:center}
 .logo{
-height:140px; /* grande */
+height:140px;
 width:auto;
 max-width:min(520px, 92vw);
 filter: drop-shadow(0 12px 25px rgba(0,0,0,.35));
 }
 
 /* Layout */
-.hero{padding:14px 0 22px}
+main{padding-bottom:10px}
+.hero{padding:14px 0 18px}
 .hero-grid{
 display:grid;
-grid-template-columns:1.25fr .75fr;
+grid-template-columns:1.2fr .8fr;
 gap:16px;
 align-items:stretch;
 }
@@ -135,16 +143,6 @@ box-shadow:0 12px 28px rgba(227,6,19,.22);
 .btn:hover{transform:translateY(-1px)}
 .btn:active{transform:translateY(0)}
 
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.chip{
-border:1px solid var(--line);
-background:rgba(255,255,255,.03);
-padding:7px 10px;
-border-radius:999px;
-font-size:13px;
-color:var(--muted);
-}
-
 section{padding:18px 0}
 h2{margin:0 0 12px;font-size:22px;letter-spacing:.2px}
 p{margin:0 0 10px;color:var(--muted);line-height:1.7}
@@ -164,7 +162,6 @@ color:var(--muted);
 font-size:13px;
 }
 
-/* Piccola barra info nel riquadro contatti */
 .kpi{display:flex;flex-direction:column;gap:6px}
 .kpi b{font-size:16px;color:var(--text)}
 .kpi span{color:var(--muted)}
@@ -177,11 +174,32 @@ font-size:13px;
 .logo{height:120px}
 }
 </style>
+
+<!-- Dati strutturati (local SEO) -->
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "RoofingContractor",
+"name": "TettoTec",
+"description": "Rifacimento tetti, impermeabilizzazioni civili e industriali, grondaie e manutenzione a Reggio Emilia e provincia.",
+"telephone": "+393273266350",
+"email": "info@tettotec.com",
+"vatID": "IT03034900351",
+"address": {
+"@type": "PostalAddress",
+"streetAddress": "Viale Risorgimento, 4",
+"addressLocality": "Reggio Emilia",
+"addressRegion": "RE",
+"addressCountry": "IT"
+},
+"areaServed": "Reggio Emilia e provincia"
+}
+</script>
 </head>
 
 <body>
+<a class="skip" href="#home">Salta al contenuto</a>
 
-<!-- NAV (solo menu + mini titolo, logo fuori) -->
 <header>
 <div class="container">
 <div class="nav">
@@ -198,11 +216,11 @@ font-size:13px;
 </div>
 </header>
 
-<!-- LOGO GRANDE FUORI DALLA BARRA -->
 <div class="brand-hero">
 <div class="container">
 <div class="logo-wrap">
-<img class="logo" src="logo.png" alt="Logo TettoTec - Soluzioni impermeabili">
+<img class="logo" src="logo.png" width="520" height="140" loading="eager"
+alt="Logo TettoTec - Soluzioni impermeabili">
 </div>
 </div>
 </div>
@@ -217,55 +235,28 @@ font-size:13px;
 <div class="card">
 <h1>Tetti, impermeabilizzazioni e lattoneria a Reggio Emilia</h1>
 <p class="lead">
-Interveniamo su coperture civili e industriali con rifacimenti, guaina impermeabilizzante,
-isolamento termico, grondaie e manutenzioni.
+Interveniamo su coperture civili e industriali con rifacimenti, impermeabilizzazioni,
+grondaie e manutenzioni. Materiali affidabili e lavorazioni professionali.
 </p>
 
 <div class="cta-row">
-<a class="btn btn-primary" href="tel:+393273266350">Chiama ora: 327 326 6350</a>
+<a class="btn btn-primary" href="#contatti">Richiedi informazioni</a>
 <a class="btn" href="mailto:info@tettotec.com">Scrivi una email</a>
 </div>
 
-<div class="chips" aria-label="Aree e servizi principali">
-<span class="chip">Reggio Emilia & provincia</span>
-<span class="chip">Rifacimento tetti</span>
-<span class="chip">Guaina impermeabilizzante</span>
-<span class="chip">Lattoneria & grondaie</span>
-<span class="chip">Isolamento termico</span>
-<span class="chip">Manutenzione</span>
-</div>
-
 <p class="note" style="margin-top:10px">
-Sede: Viale Risorgimento, 4 - Reggio Emilia (RE)
+Operativi a Reggio Emilia e provincia — Sede: Viale Risorgimento, 4 (RE)
 </p>
 </div>
 
 <div class="card soft">
-<h2>Contatto veloce</h2>
-
-<div class="card soft" style="margin-top:10px">
-<div class="kpi">
-<b>Telefono</b>
-<span><a href="tel:+393273266350">+39 327 326 6350</a></span>
-</div>
-</div>
-
-<div class="card soft" style="margin-top:10px">
-<div class="kpi">
-<b>Email</b>
-<span><a href="mailto:info@tettotec.com">info@tettotec.com</a></span>
-</div>
-</div>
-
-<div class="card soft" style="margin-top:10px">
-<div class="kpi">
-<b>Indirizzo</b>
-<span>Viale Risorgimento, 4 - Reggio Emilia (RE)</span>
-</div>
-</div>
-
-<p class="note" style="margin-top:12px">
-Preventivi e sopralluoghi gratuiti, senza impegno.
+<h2>Interventi rapidi e mirati</h2>
+<p>
+Soluzioni per infiltrazioni, degrado della copertura e interventi su lattonerie.
+Sopralluoghi e preventivi gratuiti, senza impegno.
+</p>
+<p class="note">
+Contatti completi in fondo alla pagina.
 </p>
 </div>
 
@@ -275,32 +266,41 @@ Preventivi e sopralluoghi gratuiti, senza impegno.
 <!-- SERVIZI -->
 <section id="servizi">
 <div class="card">
-<h2>Servizi</h2>
+<h2>I nostri servizi</h2>
+
+<p class="note" style="margin-bottom:12px">
+Servizi per privati e aziende, con interventi programmati o in urgenza.
+</p>
+
 <div class="grid">
+
+<!-- 1) Rifacimenti tetti -->
 <div class="card soft service">
-<b>Rifacimento tetti</b>
-<p>Rifacimenti parziali o completi, ripristini e sostituzione elementi danneggiati.</p>
+<b>Rifacimenti tetti (civile)</b>
+<p>Rifacimento parziale o completo della copertura, ripristini e sostituzioni.</p>
 </div>
+
 <div class="card soft service">
-<b>Impermeabilizzazione</b>
-<p>Posa guaina e sistemi impermeabilizzanti per coperture piane e inclinate, stop infiltrazioni.</p>
+<b>Sostituzione tegole</b>
+<p>Rimozione e sostituzione di tegole danneggiate, interventi localizzati.</p>
 </div>
+
 <div class="card soft service">
-<b>Lattoneria</b>
-<p>Scossaline, converse, canali di gronda e pluviali: posa e riparazioni.</p>
+<b>Impermeabilizzazione (civile)</b>
+<p>Guaina e sistemi impermeabilizzanti per coperture piane e inclinate.</p>
 </div>
+
 <div class="card soft service">
-<b>Grondaie</b>
-<p>Pulizia, sostituzione e ripristino grondaie e pluviali per corretto deflusso acque.</p>
+<b>Grondaie e pluviali</b>
+<p>Installazione, ripristino e manutenzione per corretto deflusso delle acque.</p>
 </div>
+
+<!-- 2) Impermeabilizzazione industriale -->
 <div class="card soft service">
-<b>Isolamento termico</b>
-<p>Interventi per migliorare comfort e prestazioni energetiche (in base alla copertura).</p>
+<b>Impermeabilizzazione industriale</b>
+<p>Soluzioni per capannoni e coperture industriali: superfici estese e criticità complesse.</p>
 </div>
-<div class="card soft service">
-<b>Manutenzione tetti</b>
-<p>Controlli e piccole riparazioni per prevenire danni e costi maggiori nel tempo.</p>
-</div>
+
 </div>
 </div>
 </section>
@@ -312,26 +312,23 @@ Preventivi e sopralluoghi gratuiti, senza impegno.
 <div class="card">
 <h2>Chi siamo</h2>
 <p>
-Hai infiltrazioni dal tetto o problemi di isolamento termico? Interveniamo rapidamente a Reggio Emilia e
-provincia con soluzioni efficaci per il rifacimento tetti, posa di guaina impermeabilizzante e isolamento termico.
-Proteggi la tua casa da umidità, pioggia e dispersioni di calore con materiali di alta qualità e lavorazioni professionali.
-Migliora il comfort e riduci i consumi energetici.
-<b>Preventivi e sopralluoghi gratuiti, senza impegno.</b>
+Interveniamo a Reggio Emilia e provincia con soluzioni efficaci per rifacimenti tetti e impermeabilizzazioni,
+dalla sostituzione tegole alla gestione di infiltrazioni e lattonerie.
+Lavoriamo con attenzione ai dettagli per garantire durabilità e protezione nel tempo.
 </p>
 
 <div class="cta-row" style="margin-top:12px">
-<a class="btn btn-primary" href="tel:+393273266350">Chiama ora</a>
-<a class="btn" href="mailto:info@tettotec.com?subject=Richiesta%20sopralluogo%20-%20TettoTec&body=Buongiorno,%0D%0A%0D%0AVorrei%20un%20sopralluogo%20gratuito.%0D%0AIndirizzo%20intervento:%20%0D%0ATipo%20problema:%20%0D%0ATelefono:%20%0D%0A%0D%0AGrazie.">Richiedi sopralluogo via email</a>
+<a class="btn btn-primary" href="#contatti">Richiedi sopralluogo</a>
 </div>
 
 <p class="note" style="margin-top:12px">
-(Se vuoi, aggiungiamo una sezione “Galleria lavori” con foto reali: basta caricarle nel repository.)
+(Se vuoi, aggiungiamo una sezione “Galleria lavori” con foto reali.)
 </p>
 </div>
 
 <div class="card" id="contatti">
 <h2>Contatti</h2>
-<p><b>Telefono:</b> <a href="tel:+393273266350">327 326 6350</a></p>
+<p><b>Telefono:</b> <a href="tel:+393273266350">+39 327 326 6350</a></p>
 <p><b>Email:</b> <a href="mailto:info@tettotec.com">info@tettotec.com</a></p>
 <p><b>Indirizzo:</b> Viale Risorgimento, 4 — Reggio Emilia (RE)</p>
 <p class="note">P.IVA: 03034900351</p>
@@ -343,11 +340,6 @@ loading="lazy"
 referrerpolicy="no-referrer-when-downgrade"
 src="https://www.google.com/maps?q=Viale%20Risorgimento%2C%204%2C%20Reggio%20Emilia&output=embed">
 </iframe>
-</div>
-
-<div class="cta-row" style="margin-top:12px">
-<a class="btn" href="mailto:info@tettotec.com">Invia email</a>
-<a class="btn" href="tel:+393273266350">Chiama</a>
 </div>
 </div>
 
