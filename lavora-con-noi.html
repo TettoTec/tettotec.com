@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>TettoTec | Lavora con noi</title>
-<meta name="description" content="Lavora con TettoTec. Valutiamo candidature di professionisti e collaboratori nel settore edilizio e tecnico.">
+<meta name="description" content="Invia la tua candidatura a TettoTec. Valutiamo profili tecnici, commerciali e amministrativi nel settore edilizio.">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -29,15 +29,15 @@
 </header>
 
 <main>
-
 <section class="page-hero section">
 <div class="container">
 <div class="section-heading">
 <p class="eyebrow">Lavora con noi</p>
-<h1>Collaborazioni e opportunità professionali</h1>
+<h1>Invia la tua candidatura</h1>
 <p>
-Siamo interessati a entrare in contatto con figure professionali qualificate e collaboratori
-seri e motivati nel settore edilizio, tecnico e commerciale.
+Valutiamo candidature di ingegneri civili, architetti, geometri, figure commerciali,
+marketing e segreteria edile. Curriculum vitae e lettera di presentazione sono obbligatori.
+L’iscrizione all’ordine professionale è preferita dove applicabile.
 </p>
 </div>
 </div>
@@ -45,9 +45,7 @@ seri e motivati nel settore edilizio, tecnico e commerciale.
 
 <section class="section">
 <div class="container">
-
 <div class="grid-2">
-
 <article class="card">
 <h2>Figure che valutiamo</h2>
 <ul class="check-list">
@@ -55,96 +53,144 @@ seri e motivati nel settore edilizio, tecnico e commerciale.
 <li>Architetti</li>
 <li>Geometri</li>
 <li>Figure commerciali</li>
-<li>Professionisti marketing</li>
+<li>Marketing</li>
 <li>Segretari e personale amministrativo edile</li>
 </ul>
 </article>
 
 <article class="card">
-<h2>Requisiti richiesti</h2>
+<h2>Requisiti preferiti</h2>
 <ul class="check-list">
 <li>Serietà e affidabilità</li>
-<li>Capacità organizzativa e operativa</li>
-<li>Attitudine al lavoro strutturato</li>
-<li>Esperienza nel settore (preferibile)</li>
-<li>Iscrizione all’ordine professionale (preferita dove applicabile)</li>
+<li>Capacità organizzativa</li>
+<li>Esperienza nel settore, se presente</li>
+<li>Iscrizione all’ordine professionale preferita</li>
+<li>Documentazione completa obbligatoria</li>
 </ul>
 </article>
-
 </div>
-
 </div>
 </section>
 
 <section class="section section-dark">
 <div class="container">
-
 <div class="section-heading center">
 <p class="eyebrow">Candidatura</p>
-<h2>Come inviare la candidatura</h2>
+<h2>Compila il modulo e allega i documenti</h2>
 <p>
-Valutiamo con attenzione ogni candidatura ricevuta. Per essere presi in considerazione
-è necessario inviare documentazione completa.
+Le candidature vengono archiviate nel sistema di raccolta e valutate internamente.
 </p>
 </div>
 
-<div class="grid-2">
+<div class="form-layout">
+<form
+class="contact-form"
+action="https://formspree.io/f/YOUR_CAREERS_ENDPOINT"
+method="POST"
+enctype="multipart/form-data"
+>
+<input type="hidden" name="_subject" value="Nuova candidatura - TettoTec">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://www.tettotec.com/grazie-candidatura.html">
 
-<article class="service-card">
-<h3>Documenti richiesti</h3>
+<div class="field-grid">
+<div>
+<label for="nome">Nome e cognome</label>
+<input type="text" id="nome" name="nome" required>
+</div>
+<div>
+<label for="email">Email</label>
+<input type="email" id="email" name="email" required>
+</div>
+</div>
+
+<div class="field-grid">
+<div>
+<label for="ruolo">Ruolo per cui ti candidi</label>
+<select id="ruolo" name="ruolo" required>
+<option value="">Seleziona</option>
+<option>Ingegnere civile</option>
+<option>Architetto</option>
+<option>Geometra</option>
+<option>Commerciale</option>
+<option>Marketing</option>
+<option>Segreteria edile</option>
+</select>
+</div>
+<div>
+<label for="ordine">Iscrizione all’ordine professionale</label>
+<select id="ordine" name="iscrizione_ordine">
+<option>No</option>
+<option>Sì</option>
+</select>
+</div>
+</div>
+
+<div class="field-grid">
+<div>
+<label for="zona">Zona di operatività</label>
+<input type="text" id="zona" name="zona_operativita">
+</div>
+<div>
+<label for="telefono-candidato">Telefono</label>
+<input type="tel" id="telefono-candidato" name="telefono">
+</div>
+</div>
+
+<div>
+<label for="presentazione">Breve presentazione</label>
+<textarea id="presentazione" name="presentazione" rows="6" placeholder="Scrivi una breve presentazione professionale."></textarea>
+</div>
+
+<div class="field-grid">
+<div>
+<label for="cv">Curriculum vitae (obbligatorio)</label>
+<input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+</div>
+<div>
+<label for="lettera">Lettera di presentazione (obbligatoria)</label>
+<input type="file" id="lettera" name="lettera_presentazione" accept=".pdf,.doc,.docx" required>
+</div>
+</div>
+
+<div class="checkbox-field">
+<input type="checkbox" id="privacy-candidatura" name="privacy" required>
+<label for="privacy-candidatura">
+Acconsento al trattamento dei dati personali secondo la
+<a href="privacy-policy.html">Privacy Policy</a>.
+</label>
+</div>
+
+<button class="btn btn-primary" type="submit">Invia candidatura</button>
+</form>
+
+<aside class="side-info">
+<div class="card">
+<h3>Documenti obbligatori</h3>
 <ul class="check-list">
 <li>Curriculum vitae aggiornato</li>
 <li>Lettera di presentazione</li>
 </ul>
-</article>
-
-<article class="service-card">
-<h3>Invio candidatura</h3>
-<p>
-Invia la tua candidatura via email indicando:
-</p>
-<ul class="check-list">
-<li>Ruolo per cui ti candidi</li>
-<li>Zona di operatività</li>
-<li>Esperienza nel settore</li>
-</ul>
-
-<p>
-Email: <a href="mailto:info@tettotec.com">info@tettotec.com</a>
-</p>
-</article>
-
 </div>
 
-</div>
-</section>
-
-<section class="section section-accent">
-<div class="container two-col">
-<div>
-<p class="eyebrow light">Collaborazioni</p>
-<h2>Valutiamo collaborazioni continuative</h2>
+<div class="card">
+<h3>Valutazione candidature</h3>
 <p>
-Siamo aperti a collaborazioni con professionisti e figure tecniche interessate
-a operare nel settore delle coperture e delle impermeabilizzazioni.
+Le candidature complete vengono esaminate in base al profilo, alla documentazione allegata
+e alla compatibilità con le esigenze aziendali.
 </p>
 </div>
-
-<div class="cta-box">
-<h3>Invia la tua candidatura</h3>
-<p>Preparati con CV e lettera di presentazione.</p>
-<a class="btn btn-white" href="mailto:info@tettotec.com">Invia candidatura</a>
+</aside>
 </div>
 </div>
 </section>
-
 </main>
 
 <footer class="site-footer">
 <div class="container footer-grid">
 <div>
 <h3>TettoTec</h3>
-<p>Rifacimento tetti, impermeabilizzazioni e lavori di copertura in tutto il Nord Italia.</p>
+<p>Riparazione tetti, impermeabilizzazioni, rifacimento coperture e lattoneria in tutto il Nord Italia.</p>
 </div>
 
 <div>
