@@ -1,75 +1,64 @@
-const toggle = document.querySelector('.menu-toggle');
+ const toggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
 const navLinkItems = document.querySelectorAll('.nav-links a');
-const preventivoForm = document.querySelector('#preventivo-form');
 
 if (toggle && navLinks) {
-toggle.addEventListener('click', () => {
-navLinks.classList.toggle('open');
-});
+  toggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
 
-navLinkItems.forEach(link => {
-link.addEventListener('click', () => {
-navLinks.classList.remove('open');
-});
-});
+  navLinkItems.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
 
-document.addEventListener('click', (event) => {
-const clickedInsideNav = navLinks.contains(event.target);
-const clickedToggle = toggle.contains(event.target);
+  document.addEventListener('click', (event) => {
+    const clickedInsideNav = navLinks.contains(event.target);
+    const clickedToggle = toggle.contains(event.target);
 
-if (!clickedInsideNav && !clickedToggle) {
-navLinks.classList.remove('open');
+    if (!clickedInsideNav && !clickedToggle) {
+      navLinks.classList.remove('open');
+    }
+  });
 }
-});
-}
+Perché questa versione è giusta
 
-if (preventivoForm) {
-preventivoForm.addEventListener('submit', (event) => {
-event.preventDefault();
+La usiamo così perché:
 
-const nome = document.querySelector('#nome')?.value.trim() || '';
-const telefono = document.querySelector('#telefono')?.value.trim() || '';
-const email = document.querySelector('#email')?.value.trim() || '';
-const citta = document.querySelector('#citta')?.value.trim() || '';
-const servizio = document.querySelector('#servizio')?.value.trim() || '';
-const messaggio = document.querySelector('#messaggio')?.value.trim() || '';
-const privacy = document.querySelector('#privacy')?.checked || false;
+è leggera
+non interferisce con il form
+non blocca l’invio a Formspree
+fa solo quello che serve davvero
+Cosa NON dobbiamo mettere qui
 
-if (!nome || !telefono || !privacy) {
-alert('Compila nome, telefono e accetta la Privacy Policy.');
-return;
-}
+Non rimettiamo:
 
-const existingMessage = document.querySelector('.form-success-message');
-if (existingMessage) {
-existingMessage.remove();
-}
+event.preventDefault() sul form
+messaggi finti di invio riuscito
+logiche che bloccano il submit
 
-const successMessage = document.createElement('div');
-successMessage.className = 'form-success-message';
-successMessage.innerHTML = `
-<strong>Richiesta inviata con successo.</strong><br>
-Ti contatteremo il prima possibile per valutare la tua richiesta.
-`;
+Perché il form deve andare diretto a Formspree.
 
-preventivoForm.appendChild(successMessage);
+Controllo finale dei 3 file principali
 
-console.log('Dati form pronti per il database:', {
-nome,
-telefono,
-email,
-citta,
-servizio,
-messaggio,
-privacy
-});
+Adesso dovresti avere:
 
-preventivoForm.reset();
+index.html
+con il nuovo testo commerciale
+con form collegato a Formspree
+styles.css
+quello nuovo completo
+script.js
+questo qui sopra
+Prossimo passo giusto
 
-successMessage.scrollIntoView({
-behavior: 'smooth',
-block: 'center'
-});
-});
-}
+Ora il sito inizia a stare davvero in piedi.
+
+Il passaggio migliore adesso è uno di questi:
+
+sistemare lavora-con-noi.html con la soluzione file upload giusta
+rifinire privacy-policy.html e cookie-policy.html
+fare un controllo finale di coerenza su tutte le pagine
+
+Dimmi da quale vuoi partire.
